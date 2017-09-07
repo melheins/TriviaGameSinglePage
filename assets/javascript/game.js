@@ -1,10 +1,10 @@
 $(document).ready(function () {
 
+    /* INITIAL LOAD */
+
     //Hide sections on initial load
     $(".score").hide();
     $(".timer").hide();
-
-
 
     /* VARIABLES */
 

@@ -1,13 +1,22 @@
 $(document).ready(function () {
 
+    //Hide sections on initial load
+    $(".score").hide();
+    $(".timer").hide();
+
+
+
     /* VARIABLES */
+
+    //Creates variable to hold the time limit amount
+    var counter = 120;
 
     // Creates variable to hold questions
     var questions = [
        // question 1 - Expanse
         {
             "id": 0,
-            "image_loc": "assets/images/one.jpg",
+            "image_loc": "assets/images/1.jpg",
             "description": "A police detective in the asteroid belt, the first officer of an interplanetary ice freighter and an earth-bound United Nations executive slowly discover a vast conspiracy that threatens the Earth's rebellious colony on the asteroid belt.",
             "choices": ["Expanse", "Dark Matter", "Continuum"],
             //location of answer in choices array
@@ -17,23 +26,212 @@ $(document).ready(function () {
        // question 2 - BSG
         {
             "id": 1,
-            "image_loc": "assets/images/two.jpg",
+            "image_loc": "assets/images/2.jpg",
             "description": "When an old enemy, the Cylons, resurface and obliterate the 12 colonies, the crew of an aged military vessel protect a small civilian fleet - the last of humanity - as they journey toward the fabled 13th colony, Earth.",
             "choices": ["Stargate SG-1", "Battlestar Galactica", "Dark Matter"],
             //location of answer in choices array
             "answer": 1,
             "status": '',
+       },
+        // question 3 - Andromeda
+        {
+            "id": 2,
+            "image_loc": "assets/images/3.jpg",
+            "description": "tbd",
+            "choices": ["Stargate SG-1", "Battlestar Galactica", "Dark Matter"],
+            //location of answer in choices array
+            "answer": 1,
+            "status": '',
+       },
+        // question 4 - Continuum
+        {
+            "id": 3,
+            "image_loc": "assets/images/4.jpg",
+            "description": "tbd",
+            "choices": ["Stargate SG-1", "Battlestar Galactica", "Dark Matter"],
+            //location of answer in choices array
+            "answer": 1,
+            "status": '',
+       },
+        // question 5 - Dark Matter
+        {
+            "id": 4,
+            "image_loc": "assets/images/5.jpg",
+            "description": "tbd",
+            "choices": ["Stargate SG-1", "Battlestar Galactica", "Dark Matter"],
+            //location of answer in choices array
+            "answer": 1,
+            "status": '',
+       },
+        // question 6 - Farscape
+        {
+            "id": 5,
+            "image_loc": "assets/images/6.jpg",
+            "description": "tbd",
+            "choices": ["Stargate SG-1", "Battlestar Galactica", "Dark Matter"],
+            //location of answer in choices array
+            "answer": 1,
+            "status": '',
+       },
+        // question 7 - Killjoys
+        {
+            "id": 6,
+            "image_loc": "assets/images/7.jpg",
+            "description": "tbd",
+            "choices": ["Stargate SG-1", "Battlestar Galactica", "Dark Matter"],
+            //location of answer in choices array
+            "answer": 1,
+            "status": '',
+       },
+        // question 8 - Killjoys
+        {
+            "id": 6,
+            "image_loc": "assets/images/8.jpg",
+            "description": "tbd",
+            "choices": ["Stargate SG-1", "Battlestar Galactica", "Dark Matter"],
+            //location of answer in choices array
+            "answer": 1,
+            "status": '',
+       },
+        // question 9 - Killjoys
+        {
+            "id": 6,
+            "image_loc": "assets/images/9.jpg",
+            "description": "tbd",
+            "choices": ["Stargate SG-1", "Battlestar Galactica", "Dark Matter"],
+            //location of answer in choices array
+            "answer": 1,
+            "status": '',
+       },
+        // question 10 - Killjoys
+        {
+            "id": 6,
+            "image_loc": "assets/images/10.jpg",
+            "description": "tbd",
+            "choices": ["Stargate SG-1", "Battlestar Galactica", "Dark Matter"],
+            //location of answer in choices array
+            "answer": 1,
+            "status": '',
+       },
+        // question 11 - Killjoys
+        {
+            "id": 6,
+            "image_loc": "assets/images/11.jpg",
+            "description": "tbd",
+            "choices": ["Stargate SG-1", "Battlestar Galactica", "Dark Matter"],
+            //location of answer in choices array
+            "answer": 1,
+            "status": '',
+       },
+        // question 12 - Killjoys
+        {
+            "id": 6,
+            "image_loc": "assets/images/12.jpg",
+            "description": "tbd",
+            "choices": ["Stargate SG-1", "Battlestar Galactica", "Dark Matter"],
+            //location of answer in choices array
+            "answer": 1,
+            "status": '',
+       },
+        // question 13 - Killjoys
+        {
+            "id": 6,
+            "image_loc": "assets/images/13.jpg",
+            "description": "tbd",
+            "choices": ["Stargate SG-1", "Battlestar Galactica", "Dark Matter"],
+            //location of answer in choices array
+            "answer": 1,
+            "status": '',
+       },
+        // question 14 - Killjoys
+        {
+            "id": 6,
+            "image_loc": "assets/images/14.jpg",
+            "description": "tbd",
+            "choices": ["Stargate SG-1", "Battlestar Galactica", "Dark Matter"],
+            //location of answer in choices array
+            "answer": 1,
+            "status": '',
+       },
+        // question 15 - Killjoys
+        {
+            "id": 6,
+            "image_loc": "assets/images/15.jpg",
+            "description": "tbd",
+            "choices": ["Stargate SG-1", "Battlestar Galactica", "Dark Matter"],
+            //location of answer in choices array
+            "answer": 1,
+            "status": '',
+       },
+        // question 16 - Killjoys
+        {
+            "id": 6,
+            "image_loc": "assets/images/16.jpg",
+            "description": "tbd",
+            "choices": ["Stargate SG-1", "Battlestar Galactica", "Dark Matter"],
+            //location of answer in choices array
+            "answer": 1,
+            "status": '',
+       },
+        // question 17 - Killjoys
+        {
+            "id": 6,
+            "image_loc": "assets/images/17.jpg",
+            "description": "tbd",
+            "choices": ["Stargate SG-1", "Battlestar Galactica", "Dark Matter"],
+            //location of answer in choices array
+            "answer": 1,
+            "status": '',
+       },
+        // question 18 - Killjoys
+        {
+            "id": 6,
+            "image_loc": "assets/images/18.jpg",
+            "description": "tbd",
+            "choices": ["Stargate SG-1", "Battlestar Galactica", "Dark Matter"],
+            //location of answer in choices array
+            "answer": 1,
+            "status": '',
+       },
+        // question 19 - Killjoys
+        {
+            "id": 6,
+            "image_loc": "assets/images/19.jpg",
+            "description": "tbd",
+            "choices": ["Stargate SG-1", "Battlestar Galactica", "Dark Matter"],
+            //location of answer in choices array
+            "answer": 1,
+            "status": '',
+       },
+        // question 20 - Killjoys
+        {
+            "id": 6,
+            "image_loc": "assets/images/20.jpg",
+            "description": "tbd",
+            "choices": ["Stargate SG-1", "Battlestar Galactica", "Dark Matter"],
+            //location of answer in choices array
+            "answer": 1,
+            "status": '',
+       },
+        // question 21 - Killjoys
+        {
+            "id": 6,
+            "image_loc": "assets/images/21.jpg",
+            "description": "tbd",
+            "choices": ["Stargate SG-1", "Battlestar Galactica", "Dark Matter"],
+            //location of answer in choices array
+            "answer": 1,
+            "status": '',
        }
-];
+    ];
 
-    // Creates variable to hold 
+    // Creates variable to hold number of correct answers
     var correctAnswers = 0;
-    // Creates variable to hold 
+    // Creates variable to hold number of wrong answers
     var incorrectAnswers = 0;
-    // Creates variable to hold 
+    // Creates variable to hold number of un-answered questions
     var unansweredQuestions = questions.length;
 
-    var counter = 30;
 
     console.log(unansweredQuestions);
 
@@ -104,22 +302,23 @@ $(document).ready(function () {
     // Function that resets the game back to the starting point
     function reset() {
 
+        //Set time to 30 seconds
+        counter = 120;
+
         // Remove previous game data
         //clearGameDivs();
 
         // Create Characters for Character Select
         questionCreation();
-        
+
         //Start Timer
         timerWrapper();
-        
+
         //Hide score section
         $(".score").hide();
+        $(".timer").show();
+        $(".questions").show();
     }
-
-    //INITIALIZE GAME ON FIRST LOAD
-    reset();
-
 
 
     /* TIMER STUFF*/
@@ -156,15 +355,16 @@ $(document).ready(function () {
             }
             return minutes + ":" + seconds;
         }
-
-
     }
 
 
-    
+
 
     /* ON CLICK EVENTS */
-    $(".answer").click(function () {
+
+    $("#question-area").on("click", ".answer", function () {
+
+        console.log("test");
         $(this).parent().find('li').removeClass('active');
         $(this).addClass("active");
 
@@ -211,9 +411,15 @@ $(document).ready(function () {
         console.log('correct ' + correctAnswers);
         console.log('incorrect ' + incorrectAnswers);
         console.log('-----------');
-
-
-
     });
+
+    // On Restart Game Button Click
+    $(".btn-restartGame").click(function () {
+        $("#start-game").hide();
+        reset();
+    });
+
+
+
 
 });

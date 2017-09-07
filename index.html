@@ -15,13 +15,22 @@
 <body>
 
     <!-- Jumbotron Title -->
-    <div class="jumbotron bg-black">
-        <div class="container">
-            <h1 class="text-center">SyFy Trivia <br><small>Name that show!</small></h1>
-        </div>
-    </div>
-
     <div class="content">
+        <div class="jumbotron bg-black">
+            <div class="container">
+                <h1 class="text-center">SyFy Trivia <br><small>Name that show!</small></h1>
+            </div>
+        </div>
+        <div id="start-game" class="container">
+            <div class="panel panel-default">
+                <div class="panel-body button-area">
+                    <h3>Do you love Syfy shows?</h3>
+                    <p>Press the start game button below and take a quiz to test your knowledge! Guessing the correct show name for each of the imgaes shown.</p>
+                    <button class="btn btn-primary btn-lg btn-restartGame">Start Game</button>
+                </div>
+            </div>
+        </div>
+
         <div class="timer container">
             <div class="panel panel-default">
                 <div class="panel-heading bg-black">
@@ -32,7 +41,7 @@
                 </div>
             </div>
         </div>
-        <div class="questions container">
+        <div id="question-area" class="questions container">
 
         </div>
 
@@ -47,6 +56,7 @@
                         <li class="list-group-item ">Incorrect: <span class="incorrectCnt"></span></li>
                         <li class="list-group-item ">Un-Answered: <span class="unansweredCnt"></span></li>
                     </ul>
+                    <button class="btn btn-primary btn-lg btn-restartGame">Start Game</button>
                 </div>
             </div>
         </div>
